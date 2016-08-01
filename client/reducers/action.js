@@ -16,23 +16,19 @@ export const runCommands = () => {
   return (dispatch, getState) => {
     var interval = setInterval(() => {
       var state = getState()
-      if (state.running === false || state.robot.isAlive == false) {
+      if (!state.running || !state.robot.isAlive) {
         clearInterval(interval)
-        return
       }
-      if (state.executeCommandIndex === state.commandQueue.length) {
-        if (state.board[state.robot.positionY][state.robot.positionX] === 1) {
-          dispatch(nextCommand("LEVEL_WON"))
-        }
-        dispatch({type: 'HAS_FINISHED'})
-        clearInterval(interval)
-      } else {
-        dispatch(nextCommand(state.commandQueue[state.executeCommandIndex]))
+      else if (state.executeCommandIndex === state.commandQueue.length) {
+        dispatch(tick())
       }
     }, 800)
   }
 }
 
+function tick() {
+  return {type: 'TICK'} 
+}
 export const nextCommand = (command) => {
   return {
     type: command

@@ -6,21 +6,21 @@ import * as a from './action'
 const INITIAL_STATE = {
   robot: {
     direction: 0,
-    isOnBox: false,
     positionX: 0,
     positionY: 4,
     isAlive: true
   },
-  board: levels[1],
+  board: levels[0],
   commandQueue: [], // commands are the same as the action types. e.g. MOVE_FORWARD
   running: false,
   executeCommandIndex: 0,
   tileInfo: {},
-  currentLevel: 1,
+  currentLevel: 0,
   levelWon: false,
   hasFinished: false // Has the command queue finished running? i.e. executed all commands
 }
 
+//maybe seamless immutable
 export function cloneState (state) {
   return {
     robot: {...state.robot},
@@ -41,12 +41,13 @@ const reducer = (state = INITIAL_STATE, action) => {
     case a.CLEAR_BUTTON:
       if (state.running) {
         // stop the robot before clearing
-        newState.running = INITIAL_STATE.running
+        // factor out to `resetGameState()`
+        newState.running = false 
         newState.robot = INITIAL_STATE.robot
       }
 
-      newState.commandQueue = INITIAL_STATE.commandQueue
-      newState.executeCommandIndex = INITIAL_STATE.executeCommandIndex
+      newState.commandQueue = []
+      newState.executeCommandIndex = 0
       return newState
 
     case a.GO_BUTTON:
@@ -61,7 +62,7 @@ const reducer = (state = INITIAL_STATE, action) => {
       newState.hasFinished = false
       return newState
 
-    case a.SELECT_LEVEL:
+    case a.SET_LEVEL:
       const newLevelState = cloneState(INITIAL_STATE)
       newLevelState.board = levels[action.payload]
       newLevelState.tileInfo = state.tileInfo

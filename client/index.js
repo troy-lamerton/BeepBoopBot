@@ -4,10 +4,12 @@ import { Provider } from 'react-redux'
 import { createStore, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
 import createLogger from 'redux-logger'
+
 import App from './components/App'
 import reducer from './reducers/reducer'
 
 const logger = createLogger()
+//maybe remove logger in production
 const store = createStore(reducer, applyMiddleware(logger, thunk))
 
 document.addEventListener('DOMContentLoaded', () => {

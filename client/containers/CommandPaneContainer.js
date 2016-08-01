@@ -2,9 +2,9 @@ import { connect } from 'react-redux'
 import CommandPane from '../components/CommandPane'
 import * as actions from '../reducers/action.js'
 
-function mapStateToProps (state) {
+function mapStateToProps ({commandQueue}) {
   return {
-    commandQueue: state.commandQueue,
+    commandQueue,
     running: state.running,
     executeCommandIndex: state.executeCommandIndex,
     hasFinished: state.hasFinished
@@ -13,7 +13,7 @@ function mapStateToProps (state) {
 
 function mapDispatchToProps (dispatch) {
   return {
-    QUEUE_ACTION: (payload) => {
+    queueAction: (payload) => {
       dispatch(actions.queueAction(payload))
     },
     GO_BUTTON: () => {

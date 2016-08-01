@@ -14,9 +14,8 @@
     "watch-css": "nodemon -e scss -x \"npm run build-css\"",
     "build": "cd client && webpack --progress --profile --colors",
     "build:watch": "cd client && webpack --progress --profile --colors --watch",
-    "test": "cd client && babel-tape-runner test/*.js | tap-spec"
+    "test:client": "babel-tape-runner client/test/*.js | tap-spec"
   },
-  "author": "olwiba",
   "license": "MIT",
   "dependencies": {
     "classnames": "^2.2.5",
@@ -28,7 +27,8 @@
     "react-redux": "^4.4.5",
     "react-skylight": "^0.4.0",
     "redux": "^3.5.2",
-    "redux-thunk": "^2.1.0"
+    "redux-thunk": "^2.1.0",
+    "colors": "^1.1.2"
   },
   "devDependencies": {
     "babel-loader": "^6.2.4",
@@ -36,7 +36,6 @@
     "babel-preset-react": "^6.11.1",
     "babel-preset-stage-0": "^6.5.0",
     "babel-tape-runner": "^2.0.1",
-    "colors": "^1.1.2",
     "deep-freeze": "0.0.1",
     "enzyme": "^2.4.1",
     "node-sass": "^3.8.0",

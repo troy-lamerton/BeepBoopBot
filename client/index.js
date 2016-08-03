@@ -9,7 +9,9 @@ import App from './components/App'
 import reducer from './reducers/reducer'
 
 const soundsData = {
-  jump: './resources/sound/jump.wav'
+  jump: './resources/sound/jump.wav',
+  die: './resources/sound/dying.wav',
+  win: './resources/sound/win.mp3'
 }
 const loadedSoundsMiddleware = soundsMiddleware(soundsData)
 const logger = createLogger()

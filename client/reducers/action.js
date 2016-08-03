@@ -39,7 +39,7 @@ export const runCommands = () => {
         var x = dispatchSound(state)
         if(x !== null)
         {
-          dispatch(playSound('jump'))
+          dispatch(playSound(x))
         }
         
       }

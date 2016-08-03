@@ -129,6 +129,9 @@ const reducer = (state = INITIAL_STATE, action) => {
       }
       return newState
 
+    case a.SOUND:
+      return state
+
     default:
       return state
 

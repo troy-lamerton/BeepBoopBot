@@ -5,6 +5,7 @@ import levels from '../levels'
 import * as a from './action'
 
 const speaker = cookie.load('sound')
+console.log('speaker', speaker)
 
 const INITIAL_STATE = {
   robot: {

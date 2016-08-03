@@ -128,5 +128,3 @@ class Nav extends Component {
 }
 
 export default Nav
-
-          // <div className='sound' onClick={this.props.toggleSound}><img src={'/resources/images/' + soundOn + '.png'} className='sound-img' /></div>

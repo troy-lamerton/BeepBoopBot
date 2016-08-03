@@ -69,7 +69,7 @@
     @media screen and (max-width: 450px) {
       .navigation .levels-container {
         width: 20%;
-        margin-right: 14%; } }
+        margin-right: 25%; } }
     .navigation .levels-container .about {
       height: 92%;
       width: 50px;
@@ -82,6 +82,9 @@
       font-size: 20px;
       color: #1c8da0;
       cursor: help; }
+      @media screen and (max-width: 450px) {
+        .navigation .levels-container .about {
+          padding: 0 12px; } }
     .navigation .levels-container .about:hover {
       color: #60afbc;
       border: 2px solid #60afbc; }
@@ -220,7 +223,7 @@
     cursor: pointer; }
     @media screen and (max-width: 450px) {
       .navigation .levels {
-        width: 25%;
+        width: 10%;
         background: url("/resources/images/burger-button.png") no-repeat;
         background-position: center center;
         background-size: 90%;

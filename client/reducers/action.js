@@ -36,10 +36,10 @@ export const runCommands = () => {
       }
       else {
         dispatch(createAction(state.commandQueue[state.executeCommandIndex]))
-        var x = dispatchSound(state)
-        if(x !== null)
+        var soundType = dispatchSound(state)
+        if(soundType !== null)
         {
-          dispatch(playSound(x))
+          dispatch(playSound(soundType))
         }
         
       }

@@ -1,27 +1,27 @@
 export default [
   {
-    url: './resources/sound/jump.wav',
-    title: 'jump',
+    url: './resources/sound/background_loops/one.mp3',
+    title: 'background1',
     duration: 0
   },
   {
-    url: './resources/sound/dying.wav',
-    title: 'dying',
+    url: './resources/sound/background_loops/two.mp3',
+    title: 'background2',
     duration: 0
   },
   {
-    url: './resources/sound/background.wav',
-    title: 'background',
+    url: './resources/sound/background_loops/three.mp3',
+    title: 'background3',
     duration: 0
   },
   {
-     url: 'https://raw.githubusercontent.com/scottschiller/SoundManager2/master/demo/_mp3/440hz.mp3',
-     title: '440hz',
+     url: './resources/sound/background_loops/four.mp3',
+     title: 'background4',
      duration: 0
   } ,
   {
-    url: 'https://raw.githubusercontent.com/scottschiller/SoundManager2/master/demo/_mp3/1hz-10khz-sweep.mp3',
-    title: '1hz-10khz sweep',
+    url: './resources/sound/background_loops/five.mp3',
+    title: 'background5',
     duration: 0
   } 
 ]

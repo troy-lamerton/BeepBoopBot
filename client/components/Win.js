@@ -38,18 +38,30 @@ class Win extends Component {
     : this.props.currentLevel + 1
     this.props.setLevel(newLevel)
   }
-
   render () {
+    var left = window.innerWidth * 0.35
+    var top = window.innerHeight * 0.40
+    var width = '70%'
+    var height = '70%'
+
+    if (window.innerWidth < 850) {
+      left = window.innerWidth * 0.35
+      top = window.innerHeight * 0.40
+      height = '80%'
+    }
+
     var winDialog = {
       backgroundColor: '#00897B',
       color: '#ffffff',
-      width: '70%',
-      height: '50%',
-      marginTop: '-10%',
-      marginLeft: '-35%',
+      width: width,
+      height: height,
+      left: left,
+      top: top,
       borderRadius: '2%',
       padding: '15px'
     }
+
+
 
     return (
       <div>
@@ -60,7 +72,7 @@ class Win extends Component {
             <h3 className={classNames('modal-heading', 'about-backstory')}>Game Over!</h3>
             <p>Excellent! B3 made it to the control room and stopped the space ship from colliding with Earth!</p>
             <p>You are the saviour of humanity!</p>
-            <br />
+            
             <div className='modal-button-container'>
               <a className='modal-button modal-animate win-action' onClick={() => { this.refs.winBox.hide() }}>
                 Play Again

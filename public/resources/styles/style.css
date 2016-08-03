@@ -807,8 +807,8 @@
     align-items: center; }
     @media screen and (max-width: 850px) {
       .win-notice .modal-button-container {
-        height: 30%;
-        width: 76%; } }
+        height: 15%;
+        /*width: 76%;*/ } }
     .win-notice .modal-button-container .modal-button {
       margin: 10px;
       height: 80%;
@@ -845,6 +845,9 @@
     width: 25%; }
   .win-notice .win-game-b3 {
     height: 45%; }
+    @media screen and (max-width: 850px) {
+      .win-notice .win-game-b3 {
+        height: 25%; } }
 
 /* Import Fonts */
 /* Fonts */

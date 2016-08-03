@@ -14,9 +14,16 @@ class Robot extends Component {
     return [centerX, centerY]
   }
 
-  render() {
+  componentDidMount () {
+    window.onresize = () => { this.forceUpdate(() => {}) }
+  }
+
+  componentWillUnmount () {
+    window.onresize = null
+  }
+  render () {
     var centerPoints = this.calcCenter()
-    var size = 80
+    var size = 100
     var positioning = size / 2
     var dampingStrength = 1
     var stiffnessStrength = 100
@@ -63,8 +70,8 @@ class Robot extends Component {
             height: value.scale,
             width: value.scale,
             position: 'absolute',
-            top: value.y - 50,
-            left: value.x - positioning,
+            top: value.y - 70,
+            left: value.x - 55,
             transform: `rotate(${value.rot}deg)`
           }}>
             <ReactMotionLoop styleFrom={{

@@ -30,6 +30,11 @@ class Nav extends Component {
   }
 
   render () {
+    var modalLeft = '50%'
+    if (window.innerWidth < 600) {
+      modalLeft = '41%'
+    }
+    console.log('modalLeft', modalLeft)
     var storyAndInstructionsStyle = {
       backgroundColor: '#00897B',
       color: '#ffffff',
@@ -40,11 +45,14 @@ class Nav extends Component {
     var levelsModalStyle = {
       backgroundColor: '#00897B',
       color: '#ffffff',
-      width: '30%',
+      width: '50%',
       borderRadius: '2%',
       padding: '0 30px 0 30px',
-      overflowY: 'auto'
+      overflowY: 'auto',
+      left: modalLeft
     }
+    var soundOn = this.props.sound ? 'soundOff' : 'soundOn'
+
     return (
       <div className='navigation'>
         <div className='invisible-container'>
@@ -56,7 +64,7 @@ class Nav extends Component {
           <div className='levels' onClick={() => this.refs.levelSelect.show()} >{'Level ' + this.props.currentLevel}</div>
           <SkyLight hideOnOverlayClicked={true} ref='levelSelect' dialogStyles={levelsModalStyle} >
             <div className='about-backstory level-select-container'>
-              <h3>Select a level to play</h3>
+              <h3 className={classNames('modal-heading', 'about-backstory')}>Select a level</h3>
               {
                 Object.keys(levels).map((levelNum, index) => {
                   return (
@@ -74,6 +82,7 @@ class Nav extends Component {
             </div>
           </SkyLight>
           <div className='about' onClick={() => this.refs.storyBox.show()}>i</div>
+          <div className='sound' onClick={this.props.toggleSound}><img src={'/resources/images/' + soundOn + '.png'} className='sound-img' /></div>
           <SkyLight hideOnOverlayClicked={true} ref='storyBox' dialogStyles={storyAndInstructionsStyle} >
             <div className='about-backstory'>
               <img src='/resources/images/intro-b3.svg' className='intro-b3' />
@@ -114,7 +123,6 @@ class Nav extends Component {
             </div>
           </SkyLight>
         </div>
-        <button onClick={this.props.toggleSound}> Sound </button>
       </div>
     )
   }

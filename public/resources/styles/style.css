@@ -68,9 +68,24 @@
     flex-wrap: nowrap; }
     @media screen and (max-width: 450px) {
       .navigation .levels-container {
-        width: 10%;
+        width: 20%;
         margin-right: 14%; } }
     .navigation .levels-container .about {
+      height: 92%;
+      width: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 2px solid #1c8da0;
+      background: #02333a;
+      font-family: 'Press Start 2P', cursive;
+      font-size: 20px;
+      color: #1c8da0;
+      cursor: help; }
+    .navigation .levels-container .about:hover {
+      color: #60afbc;
+      border: 2px solid #60afbc; }
+    .navigation .levels-container .sound {
       height: 92%;
       width: 50px;
       display: flex;
@@ -82,14 +97,17 @@
       font-family: 'Press Start 2P', cursive;
       font-size: 20px;
       color: #1c8da0;
-      cursor: help; }
+      cursor: pointer; }
+      .navigation .levels-container .sound .sound-img {
+        height: 50%;
+        width: 50%; }
       @media screen and (max-width: 850px) {
-        .navigation .levels-container .about {
+        .navigation .levels-container .sound {
           width: 20%;
           padding: 0 20%;
           margin-right: 20%;
           right: 20px; } }
-    .navigation .levels-container .about:hover {
+    .navigation .levels-container .sound:hover {
       color: #60afbc;
       border: 2px solid #60afbc; }
     .navigation .levels-container .level-select-container {
@@ -108,6 +126,9 @@
       font-family: 'Space Mono', monospace; }
     .navigation .levels-container .modal-heading {
       font-size: 30px; }
+      @media screen and (max-width: 850px) {
+        .navigation .levels-container .modal-heading {
+          font-size: 22px; } }
     .navigation .levels-container .level-select {
       display: flex;
       justify-content: center;
@@ -120,10 +141,12 @@
       background: #02333a;
       font-size: 20px;
       color: #1c8da0;
-      cursor: default; }
+      cursor: pointer;
+      margin-top: 10px; }
       @media screen and (max-width: 850px) {
         .navigation .levels-container .level-select {
-          width: 20%;
+          width: 80%;
+          height: 15%;
           padding: 0 20%;
           right: 20px; } }
     .navigation .levels-container .level-select:hover {
@@ -295,6 +318,14 @@
     @media screen and (max-width: 320px) {
       .command-pane .runButtons-container {
         height: 29%; } }
+  .command-pane .moves-left {
+    line-height: 100%;
+    font-size: 21px;
+    color: white;
+    text-shadow: 0px -2px rgba(0, 0, 0, 0.2); }
+    @media screen and (max-width: 850px) {
+      .command-pane .moves-left {
+        line-height: 0%; } }
   .command-pane .action-button-container {
     height: 20%;
     width: 80%;
@@ -341,6 +372,15 @@
           margin: 9px 0 6px 9px;
           height: 37px;
           width: 70px; } }
+    .command-pane .action-button-container .action-icon {
+      height: 50%;
+      width: 50%; }
+    .command-pane .action-button-container .action-forward {
+      background: #78c042;
+      border-bottom: 7px solid #4d9713; }
+    .command-pane .action-button-container .action-rotate {
+      background: #ea7750;
+      border-bottom: 7px solid #c45d45; }
     .command-pane .action-button-container .moves-left {
       line-height: 100%;
       font-size: 21px;
@@ -349,18 +389,6 @@
       @media screen and (max-width: 850px) {
         .command-pane .action-button-container .moves-left {
           line-height: 0%; } }
-    .command-pane .action-button-container .action-icon {
-      height: 50%;
-      width: 50%; }
-    .command-pane .action-button-container .action-forward {
-      background: #78c042;
-      border-bottom: 7px solid #4d9713; }
-    .command-pane .action-button-container .action-forward:hover {
-      background: #93cc67;
-      border-bottom: 7px solid #70ab42; }
-    .command-pane .action-button-container .action-rotate {
-      background: #ea7750;
-      border-bottom: 7px solid #c45d45; }
     .command-pane .action-button-container .action-rotate:hover {
       background: #ee9272;
       border-bottom: 7px solid #cf7d6a; }
@@ -416,7 +444,7 @@
   background-size: 25%; }
 
 .board-container.control {
-  background: url("/resources/images/marble.jpg");
+  background: url("/resources/images/marble.png");
   background-size: 50%; }
 
 .board-container {
@@ -471,8 +499,8 @@
         justify-content: center;
         align-content: center;
         align-items: center;
-        padding: 0px 0 0px 1px;
-        margin: -4px 0px 1px 2px;
+        padding: 0 0 0 1px;
+        margin: -4px 0 1px 2px;
         border-radius: 10px;
         background-color: #f2f2f2;
         border-bottom: 2vh solid rgba(0, 0, 0, 0.3);
@@ -480,17 +508,28 @@
         height: 17%; } }
   .board-container .clear {
     background: transparent;
+    padding-bottom: 1%;
     border-bottom: 2vh solid transparent; }
+  .board-container .hole {
+    width: 105%;
+    -webkit-animation: spin 0.5s infinite linear; }
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg); } }
   .board-container .basement.odd {
-    background: url("/resources/images/wall.png") #ea7750; }
+    background: url("/resources/images/wall.png") #ea7750;
+    background-size: 200%; }
   .board-container .basement.even {
     background: url("/resources/images/asfalt-light.png") #c45d45; }
   .board-container .engine.odd {
     background: url("/resources/images/metal-1.png") #f2f2f2;
-    background-size: 175%; }
+    background-size: cover; }
   .board-container .engine.even {
     background: url("/resources/images/metal-2.png") #cbcbcb;
-    background-size: 175%; }
+    background-size: cover; }
   .board-container .cargo.odd {
     background: url("/resources/images/mesh.png") #000000;
     background-size: 25%; }
@@ -498,9 +537,11 @@
     background: url("/resources/images/mesh.png") #1c1717;
     background-size: 25%; }
   .board-container .garden.odd {
-    background: url("/resources/images/grass-1.svg") #78c042; }
+    background: url("/resources/images/grass-1.png") #78c042 no-repeat;
+    background-size: 102%; }
   .board-container .garden.even {
-    background: url("/resources/images/grass-2.svg") #4d9713; }
+    background: url("/resources/images/grass-2.png") #4d9713;
+    background-size: 102%; }
   .board-container .control.odd {
     background: url("/resources/images/tile-squares.png") #1c1c1c;
     background-size: 75%; }
@@ -508,8 +549,8 @@
     background: url("/resources/images/tile-squares.png") #4d4d4d;
     background-size: 75%; }
   .board-container .box-tile {
-    width: 90%;
-    margin-bottom: 20%; }
+    width: 93%;
+    margin-bottom: 7%; }
   .board-container .elevator-tile {
     width: 70%;
     margin-bottom: 10%; }
@@ -649,7 +690,7 @@
     .b3-robot {
       position: absolute;
       width: 40%;
-      top: 40%;
+      top: 30%;
       height: 40%;
       background-size: 100%;
       z-index: 100; } }
@@ -674,8 +715,10 @@
 
 .win-notice {
   text-align: center; }
-  .win-notice p {
+  .win-notice p, .win-notice h3 {
     font-family: 'Space Mono', monospace; }
+  .win-notice h3 {
+    font-size: 30px; }
   .win-notice .modal-button-container {
     height: 5%;
     width: 100%;
@@ -734,13 +777,17 @@ h1 {
 
 h3 {
   font-family: "Press Start 2P", cursive;
-  font-size: 22px;
+  font-size: 2.5vh;
   color: #f2f2f2; }
+  @media screen and (max-width: 850px) {
+    h3 {
+      font-size: 2vh; } }
 
 h4 {
   font-family: "Press Start 2P", cursive;
   font-size: 16px;
-  color: #cbcbcb; }
+  color: #cbcbcb;
+  cursor: default; }
 
 .app {
   display: flex;

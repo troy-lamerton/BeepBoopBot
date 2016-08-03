@@ -428,10 +428,15 @@
       height: 44%; } }
 
 .board-background {
-  background-color: black;
-  background-image: radial-gradient(white, rgba(255, 255, 255, 0.2) 2px, transparent 5px), radial-gradient(white, rgba(255, 255, 255, 0.15) 1px, transparent 6px), radial-gradient(white, rgba(255, 255, 255, 0.1) 2px, transparent 8px), radial-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.1) 2px, transparent 10px);
-  background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
-  background-position: 0 0, 40px 60px, 130px 270px, 70px 100px; }
+  background: url("/resources/images/bg-image.svg");
+  background-size: cover;
+  background-position: center; }
+  @media screen and (max-width: 650px) {
+    .board-background {
+      background-color: black;
+      background-image: radial-gradient(white, rgba(255, 255, 255, 0.2) 2px, transparent 5px), radial-gradient(white, rgba(255, 255, 255, 0.15) 1px, transparent 6px), radial-gradient(white, rgba(255, 255, 255, 0.1) 2px, transparent 8px), radial-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.1) 2px, transparent 10px);
+      background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
+      background-position: 0 0, 40px 60px, 130px 270px, 70px 100px; } }
 
 .board-container.basement {
   background: url("/resources/images/rust.jpg"); }
@@ -536,10 +541,10 @@
     background-size: cover;
     border-bottom: 2vh solid rgba(0, 0, 0, 0.5); }
   .board-container .cargo.odd {
-    background: url("/resources/images/mesh.png") #000000;
+    background: url("/resources/images/mesh.png") #151313;
     background-size: 25%; }
   .board-container .cargo.even {
-    background: url("/resources/images/mesh.png") #1c1717;
+    background: url("/resources/images/mesh.png") #252121;
     background-size: 25%; }
   .board-container .garden.odd {
     background: url("/resources/images/grass-1.png") #78c042 no-repeat;

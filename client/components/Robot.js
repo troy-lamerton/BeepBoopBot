@@ -3,7 +3,6 @@ import {Motion, spring} from 'react-motion'
 import Sound from 'react-sound'
 import {ReactMotionLoop} from 'react-motion-loop'
 import WinContainer from '../containers/WinContainer'
-import AudioContainer from '../containers/AudioContainer'
 import classNames from 'classnames'
 
 class Robot extends Component {
@@ -113,7 +112,6 @@ class Robot extends Component {
           </div>}
         </Motion>
         <WinContainer/>
-        <AudioContainer/>
       </div>
     )
   }

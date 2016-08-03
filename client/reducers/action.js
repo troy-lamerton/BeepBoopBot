@@ -1,3 +1,5 @@
+import dispatchSound from './lib/dispatchSound'
+
 export const CLEAR_BUTTON = 'CLEAR_BUTTON'
 export const GO_BUTTON = 'GO_BUTTON'
 export const STOP_BUTTON = 'STOP_BUTTON'
@@ -12,6 +14,7 @@ export const HAS_FINISHED = 'HAS_FINISHED'
 export const LEVEL_WON = 'TOGGLE_LEVEL_WON'
 export const REMOVE_ACTION = 'REMOVE_ACTION'
 export const TOGGLE_SOUND = 'TOGGLE_SOUND'
+export const SOUND = 'SOUND'
 
 export const runCommands = () => {
   return (dispatch, getState) => {
@@ -33,6 +36,12 @@ export const runCommands = () => {
       }
       else {
         dispatch(createAction(state.commandQueue[state.executeCommandIndex]))
+        var soundType = dispatchSound(state)
+        if(soundType !== null)
+        {
+          dispatch(playSound(soundType))
+        }
+        
       }
     }, 800)
   }
@@ -72,5 +81,11 @@ export const removeAction = (commandIndex) => {
 export const toggleSound = () => {
   return {
     type: TOGGLE_SOUND
+  }
+}
+export const playSound = (meta) => {
+  return{
+    type: SOUND,
+    meta: { sound: meta }
   }
 }

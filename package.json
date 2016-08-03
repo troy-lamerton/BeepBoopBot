@@ -31,6 +31,7 @@
     "react-skylight": "^0.4.0",
     "react-sound": "^0.5.1",
     "redux": "^3.5.2",
+    "redux-sounds": "^1.1.0",
     "redux-thunk": "^2.1.0"
   },
   "devDependencies": {

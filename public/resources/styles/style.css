@@ -49,7 +49,6 @@
           height: 100%;
           border-radius: 0px;
           border-bottom: 0;
-          overflow: none;
           margin-left: 10px;
           margin-top: 10px;
           background: none; } }
@@ -256,7 +255,7 @@
   @media screen and (max-width: 850px) {
     .command-pane {
       width: 100%;
-      height: 39%;
+      height: 35.5%;
       order: 2; } }
   .command-pane .command-queue {
     width: 100%;
@@ -421,7 +420,7 @@
   @media screen and (max-width: 850px) {
     #board {
       width: 100%;
-      height: 50%; } }
+      height: 48%; } }
   @media screen and (max-width: 320px) {
     #board {
       width: 100%;
@@ -878,6 +877,7 @@ h4 {
   justify-content: flex-start;
   align-content: flex-start;
   align-items: flex-start;
+  height: 100%;
   user-select: none;
   -moz-user-select: none;
   -webkit-user-select: none;

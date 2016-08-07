@@ -33,11 +33,11 @@ const isChromium = window.chrome,
   isIEedge = winNav.userAgent.indexOf("Edge") > -1,
   isIOSChrome = winNav.userAgent.match("CriOS");
 
-if (isIOSChrome) {
-  // is Google Chrome on IOS
-} else if (isChromium !== null && isChromium !== undefined && vendorName === 'Google Inc.' && isOpera === false && isIEedge === false) {
+if (isChromium !== null && isChromium !== undefined && vendorName === 'Google Inc.' && isOpera === false && isIEedge === false) {
   // is Google Chrome
+} else if (navigator.userAgent.includes('Firefox') && isOpera === false && isIEedge === false) {
+  // is Firefox
 } else {
-  // not Google Chrome
+  // not Google Chrome or Firefox
   window.alert('This game is in alpha stage and only supports Google Chrome. The game may be squashed or look strange.')
 }

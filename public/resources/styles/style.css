@@ -33,9 +33,7 @@
     overflow: visible; }
     @media screen and (max-width: 600px) {
       .navigation .invisible-container {
-        width: 30%;
-        top: 0;
-        left: 0; } }
+        width: 30%; } }
     .navigation .invisible-container .logo-container {
       z-index: 1;
       height: 120%;

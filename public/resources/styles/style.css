@@ -4,7 +4,7 @@
 @import 'https://fonts.googleapis.com/css?family=Space+Mono';
 .navigation {
   width: 100%;
-  height: 8%;
+  height: 12.3%;
   background: #02333a;
   display: flex;
   flex-direction: row;
@@ -13,7 +13,7 @@
   align-content: center;
   align-items: center;
   border-bottom: 7px solid #011e22;
-  min-height: 80px; }
+  min-height: 70px; }
   @media screen and (max-width: 600px) {
     .navigation {
       display: flex;
@@ -33,23 +33,22 @@
     overflow: visible; }
     @media screen and (max-width: 600px) {
       .navigation .invisible-container {
-        width: 30%;
-        top: 0;
-        left: 0; } }
+        width: 30%; } }
     .navigation .invisible-container .logo-container {
       z-index: 1;
       height: 120%;
+      width: 90%;
       padding: 2%;
       background: #02333a;
       overflow: visible;
       border-radius: 40px;
-      border-bottom: 7px solid #011e22; }
+      border-bottom: 7px solid #011e22;
+      text-align: center; }
       @media screen and (max-width: 600px) {
         .navigation .invisible-container .logo-container {
           height: 100%;
           border-radius: 0px;
           border-bottom: 0;
-          overflow: none;
           margin-left: 10px;
           margin-top: 10px;
           background: none; } }
@@ -57,6 +56,7 @@
         .navigation .invisible-container .logo-container {
           margin-left: 50%; } }
       .navigation .invisible-container .logo-container .logo {
+        display: inline-block;
         height: 95%; }
         @media screen and (max-width: 600px) {
           .navigation .invisible-container .logo-container .logo {
@@ -243,20 +243,22 @@
     appearance: none; }
 
 .command-pane {
-  background: #1c8da0;
+  display: flex;
+  box-sizing: border-box;
   width: 30%;
   height: 90%;
-  display: flex;
+  padding-top: 4%;
   flex-direction: column;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: flex-start;
   align-content: center;
   align-items: center;
-  padding-top: 3%; }
+  background: #1c8da0; }
   @media screen and (max-width: 850px) {
     .command-pane {
       width: 100%;
-      height: 39%;
+      height: 38.5%;
+      padding-top: 3%;
       order: 2; } }
   .command-pane .command-queue {
     width: 100%;
@@ -421,7 +423,7 @@
   @media screen and (max-width: 850px) {
     #board {
       width: 100%;
-      height: 50%; } }
+      height: 48%; } }
   @media screen and (max-width: 320px) {
     #board {
       width: 100%;
@@ -852,6 +854,7 @@
 /* Import Fonts */
 /* Fonts */
 body {
+  background: #1c8da0;
   overflow-y: hidden; }
 
 h1 {
@@ -878,6 +881,7 @@ h4 {
   justify-content: flex-start;
   align-content: flex-start;
   align-items: flex-start;
+  height: 100%;
   user-select: none;
   -moz-user-select: none;
   -webkit-user-select: none;

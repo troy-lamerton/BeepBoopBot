@@ -37,11 +37,13 @@
     .navigation .invisible-container .logo-container {
       z-index: 1;
       height: 120%;
+      width: 90%;
       padding: 2%;
       background: #02333a;
       overflow: visible;
       border-radius: 40px;
-      border-bottom: 7px solid #011e22; }
+      border-bottom: 7px solid #011e22;
+      text-align: center; }
       @media screen and (max-width: 600px) {
         .navigation .invisible-container .logo-container {
           height: 100%;
@@ -54,6 +56,7 @@
         .navigation .invisible-container .logo-container {
           margin-left: 50%; } }
       .navigation .invisible-container .logo-container .logo {
+        display: inline-block;
         height: 95%; }
         @media screen and (max-width: 600px) {
           .navigation .invisible-container .logo-container .logo {
@@ -244,7 +247,7 @@
   box-sizing: border-box;
   width: 30%;
   height: 90%;
-  padding-top: 3%;
+  padding-top: 4%;
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: flex-start;
@@ -255,6 +258,7 @@
     .command-pane {
       width: 100%;
       height: 38.5%;
+      padding-top: 3%;
       order: 2; } }
   .command-pane .command-queue {
     width: 100%;

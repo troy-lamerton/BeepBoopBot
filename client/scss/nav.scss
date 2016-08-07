@@ -37,11 +37,13 @@
     .logo-container {
       z-index: 1;
       height: 120%;
+      width: 90%;
       padding: 2%;
       background: $blue-darkest;
       overflow: visible;
       border-radius: 40px;
       border-bottom: 7px solid $blue-shadow;
+      text-align: center;
 
       @media screen and (max-width: 600px) {
         height: 100%;
@@ -57,6 +59,7 @@
       }
 
       .logo {
+        display: inline-block;
         height: 95%;
 
         @media screen and (max-width: 600px) {

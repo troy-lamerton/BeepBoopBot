@@ -16,7 +16,7 @@ Beep Boop Bot is an education game aimed at children to teach the basis of progr
 - [x] Clear button
 - [x] Command queue box
 - [x] Two sections (Input, Game)
-- [ ] Mobile First
+- [x] Mobile First
 - [x] Can only edit commands when not running
 
 ## React Components
@@ -31,7 +31,7 @@ Beep Boop Bot is an education game aimed at children to teach the basis of progr
 
 ## User stories
 
-- [ ] As a user, I can see an 'About' page with a back story and instructions
+- [x] As a user, I can see an 'About' page with a back story and instructions
 - [x] As a user, I can click a '?' and see the about page again
 - [x] As a user, I can learn from the crucial levels how to play the game
 - [x] As a user, I can select what level I want to play

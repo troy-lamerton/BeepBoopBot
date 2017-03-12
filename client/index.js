@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
-import { createStore, applyMiddleware, combineReducers } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
 import createLogger from 'redux-logger'
 import soundsMiddleware from 'redux-sounds'
@@ -26,12 +26,13 @@ document.addEventListener('DOMContentLoaded', () => {
   )
 })
 
-const isChromium = window.chrome,
-  winNav = window.navigator,
-  vendorName = winNav.vendor,
-  isOpera = winNav.userAgent.indexOf("OPR") > -1,
-  isIEedge = winNav.userAgent.indexOf("Edge") > -1,
-  isIOSChrome = winNav.userAgent.match("CriOS");
+/* DETECT BROWSER */
+const isChromium = window.chrome
+const winNav = window.navigator
+const vendorName = winNav.vendor
+const isOpera = winNav.userAgent.indexOf('OPR') > -1
+const isIEedge = winNav.userAgent.indexOf('Edge') > -1
+const isIOSChrome = winNav.userAgent.match('CriOS')
 
 if (isIOSChrome) {
   // is Google Chrome on IOS

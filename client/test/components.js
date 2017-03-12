@@ -1,4 +1,4 @@
-import './setup';
+import './setup'
 import React from 'react'
 import test from 'tape'
 import { shallow } from 'enzyme'

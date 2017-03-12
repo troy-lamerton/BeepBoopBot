@@ -15,7 +15,7 @@ class Nav extends Component {
   }
 
   componentDidMount () {
-    var cookies = cookie.load('knownUser')
+    const cookies = cookie.load('knownUser')
     // Check if cookie exists. If not, show modal and set cookie.
     if (!cookies) {
       cookie.save('knownUser', 'User has been here before')
@@ -30,18 +30,18 @@ class Nav extends Component {
   }
 
   render () {
-    var modalLeft = '50%'
+    let modalLeft = '50%'
     if (window.innerWidth < 600) {
       modalLeft = '41%'
     }
-    var storyAndInstructionsStyle = {
+    const storyAndInstructionsStyle = {
       backgroundColor: '#00897B',
       color: '#ffffff',
       borderRadius: '2%',
       padding: '0 30px 0 30px',
       overflowY: 'auto'
     }
-    var levelsModalStyle = {
+    const levelsModalStyle = {
       backgroundColor: '#00897B',
       color: '#ffffff',
       width: '50%',
@@ -59,7 +59,7 @@ class Nav extends Component {
         </div>
         <div className='levels-container'>
           <div className='levels' onClick={() => this.refs.levelSelect.show()} >{'Level ' + this.props.currentLevel}</div>
-          <SkyLight hideOnOverlayClicked={true} ref='levelSelect' dialogStyles={levelsModalStyle} >
+          <SkyLight hideOnOverlayClicked ref='levelSelect' dialogStyles={levelsModalStyle} >
             <div className='about-backstory level-select-container'>
               <h3 className={classNames('modal-heading', 'about-backstory')}>Select a level</h3>
               {
@@ -82,7 +82,7 @@ class Nav extends Component {
           <div className='sound' onClick={this.props.toggleSound}>
             {this.props.sound ? <i className='fa fa-volume-up fa-lg'></i> : <i className='fa fa-volume-off fa-lg'></i>}
           </div>
-          <SkyLight hideOnOverlayClicked={true} ref='storyBox' dialogStyles={storyAndInstructionsStyle} >
+          <SkyLight hideOnOverlayClicked ref='storyBox' dialogStyles={storyAndInstructionsStyle} >
             <div className='about-backstory'>
               <img src='/resources/images/intro-b3.svg' className='intro-b3' />
               <h3 className={classNames('modal-heading', 'about-backstory')}>Beep Boop</h3>
@@ -99,7 +99,7 @@ class Nav extends Component {
               </div>
             </div>
           </SkyLight>
-          <SkyLight hideOnOverlayClicked={true} ref='howToPlayBox' dialogStyles={storyAndInstructionsStyle} >
+          <SkyLight hideOnOverlayClicked ref='howToPlayBox' dialogStyles={storyAndInstructionsStyle} >
             <div className='about-backstory'>
               <h3 className={classNames('modal-heading', 'about-backstory')}>Your Mission</h3>
               <p>Get B3 <img src='/resources/images/b3-robot.svg' className='how-to-small' /> to the elevator <img src='/resources/images/elevator-top.svg' className='how-to-small' /> on each level. </p>

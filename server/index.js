@@ -1,6 +1,7 @@
+/* eslint-disable no-unused-vars */
 const express = require('express')
 const path = require('path')
-const colors = require('colors')
+const colors = require('colors') // this adds colors to string prototype
 
 const app = express()
 const port = process.env.PORT || 9909

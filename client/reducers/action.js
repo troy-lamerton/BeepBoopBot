@@ -22,26 +22,21 @@ export const runCommands = () => {
       var state = getState()
       if (!state.running) {
         clearInterval(interval)
-      }
-      else if (state.executeCommandIndex === state.commandQueue.length) {
+      } else if (state.executeCommandIndex === state.commandQueue.length) {
         if (state.board[state.robot.positionY][state.robot.positionX] === 1) {
           dispatch(createAction(LEVEL_WON))
         }
         dispatch(createAction(HAS_FINISHED))
         clearInterval(interval)
-      }
-      else if (state.robot.isAlive === false || state.moveLimit === state.executeCommandIndex) {
+      } else if (state.robot.isAlive === false || state.moveLimit === state.executeCommandIndex) {
         dispatch(createAction(HAS_FINISHED))
         clearInterval(interval)
-      }
-      else {
+      } else {
         dispatch(createAction(state.commandQueue[state.executeCommandIndex]))
         var soundType = dispatchSound(state)
-        if(soundType !== null)
-        {
+        if (soundType !== null) {
           dispatch(playSound(soundType))
         }
-        
       }
     }, 800)
   }
@@ -84,7 +79,7 @@ export const toggleSound = () => {
   }
 }
 export const playSound = (meta) => {
-  return{
+  return {
     type: SOUND,
     meta: { sound: meta }
   }

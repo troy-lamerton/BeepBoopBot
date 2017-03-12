@@ -4,21 +4,22 @@ import classNames from 'classnames'
 
 class Board extends Component {
 
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.state = {
       hasMounted: false
     }
   }
 
-  componentDidMount() {
+  componentDidMount () {
     this.props.addTileInfo(this.refs)
     this.setState({hasMounted: true})
   }
 
-  render() {
-    var levelTheme = ''
-    var currentLevel = this.props.currentLevel
+  get currentLevelTheme () {
+    const currentLevel = this.props.currentLevel
+    let levelTheme = ''
+
     if (currentLevel < 6) {
       levelTheme = 'basement'
     } else if (currentLevel < 11) {
@@ -30,36 +31,59 @@ class Board extends Component {
     } else {
       levelTheme = 'control'
     }
+    return levelTheme
+  }
+
+  renderTile (tileType, colIndex, rowIndex) {
+    const levelTheme = this.currentLevelTheme
+    const oddEvenString = ((rowIndex + colIndex) % 2 === 1) ? 'odd' : 'even'
+
+    let tileImage
+    let blackhole = false
+    switch (tileType) {
+      case 3:
+        tileImage = <img src='/resources/images/blackhole.svg' className='hole'></img>
+        blackhole = true
+        break
+      case 2:
+        tileImage = <img src='/resources/images/box-tile.svg' className='box-tile' />
+        break
+      case 1:
+        tileImage = <img src='/resources/images/elevator-top.svg' className={this.props.levelWon ? classNames('elevator-animation') : classNames('elevator-no-animation')} />
+        break
+      default:
+    }
+
+    return (
+      <div
+        key={rowIndex + colIndex}
+        ref={rowIndex.toString() + colIndex.toString()}
+        className={classNames('tile', {
+          clear: blackhole,
+          [oddEvenString]: !blackhole,
+          [levelTheme]: !blackhole
+        })}
+      >
+        {tileImage}
+      </div>
+    )
+  }
+
+  renderRow (row, indexOfRow) {
+    return row.map((tileType, indexOfCol) => this.renderTile(tileType, indexOfCol, indexOfRow))
+  }
+
+  render () {
+    const levelTheme = this.currentLevelTheme
 
     return (
       <div id='board' className='board-background'>
         <div className={classNames('board-container', levelTheme)}>
-          {this.props.board.map((row, rowIndex) => {
-            return row.map((col, colIndex) => {
-              const oddEven = (rowIndex + colIndex) % 2 === 1
-                ? 'odd'
-                : 'even'
-              return (col === 3
-                ? <div key={rowIndex + colIndex} className={classNames('tile', 'clear')} ref={rowIndex.toString() + colIndex.toString()}>
-                    <img src='/resources/images/blackhole.svg' className='hole'></img>
-                  </div>
-                : col === 2
-                  ? <div key={rowIndex + colIndex} className={classNames('tile', levelTheme, oddEven)} ref={rowIndex.toString() + colIndex.toString()}>
-                      <img src='/resources/images/box-tile.svg' className='box-tile'/>
-                    </div>
-                  : col === 1
-                    ? <div key={rowIndex + colIndex} className={classNames('tile', levelTheme, oddEven)} ref={rowIndex.toString() + colIndex.toString()}>
-                        <div className='elevator-bottom'>
-                          <img src='/resources/images/elevator-top.svg' className={ this.props.levelWon ? classNames('elevator-animation') : classNames('elevator-no-animation') }/>
-                        </div>
-                      </div>
-                    : <div key={rowIndex + colIndex} className={classNames('tile', levelTheme, oddEven)} ref={rowIndex.toString() + colIndex.toString()}></div>)
-            })
-          })
+          {this.props.board.map(this.renderRow)}
         }
         </div>
         {this.state.hasMounted
-          ? <RobotContainer/>
+          ? <RobotContainer />
           : null}
       </div>
     )

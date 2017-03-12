@@ -1,13 +1,13 @@
-import jsdom from 'jsdom';
+import jsdom from 'jsdom'
 
-function setupDom() {
+function setupDom () {
   if (typeof document !== 'undefined') {
-    return;
+    return
   }
 
-  global.document = jsdom.jsdom('<html><body></body></html>');
-  global.window = document.defaultView;
-  global.navigator = window.navigator;
+  global.document = jsdom.jsdom('<html><body></body></html>')
+  global.window = document.defaultView
+  global.navigator = window.navigator
 };
 
-setupDom();
+setupDom()

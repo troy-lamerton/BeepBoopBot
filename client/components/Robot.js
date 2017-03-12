@@ -1,12 +1,11 @@
 import React, {Component} from 'react'
 import {Motion, spring} from 'react-motion'
-import Sound from 'react-sound'
 import {ReactMotionLoop} from 'react-motion-loop'
 import WinContainer from '../containers/WinContainer'
 import classNames from 'classnames'
 
 class Robot extends Component {
-  calcCenter() {
+  calcCenter () {
     var y = this.props.robot.positionY.toString()
     var x = this.props.robot.positionX.toString()
     var bounds = this.props.tileInfo[y + x].getBoundingClientRect()
@@ -14,8 +13,6 @@ class Robot extends Component {
     var centerY = (bounds.top + bounds.bottom) / 2
     return [centerX, centerY]
   }
-
-
 
   componentDidMount () {
     window.onresize = () => { this.forceUpdate(() => {}) }
@@ -25,15 +22,14 @@ class Robot extends Component {
     window.onresize = null
   }
   render () {
-    var centerPoints = this.calcCenter()
-    var size = 80
-    var positioning = size / 2
-    var dampingStrength = 1
-    var stiffnessStrength = 100
-    var precisionStrength = 1
-    var scale = 100
-    var opacity = 1.0
-    var commandExecuted = this.props.commandQueue[this.props.executeCommandIndex - 1]
+    let centerPoints = this.calcCenter()
+    let size = 80
+    let dampingStrength = 1
+    let stiffnessStrength = 100
+    let precisionStrength = 1
+    let scale = 100
+    let opacity = 1.0
+    let commandExecuted = this.props.commandQueue[this.props.executeCommandIndex - 1]
     if (commandExecuted === 'JUMP_UP') {
       if (!this.props.robot.isAlive) {
         precisionStrength = 0.1
@@ -89,7 +85,7 @@ class Robot extends Component {
                 precision: precisionStrength
               })
             }}>
-              {style => <img src="/resources/images/b3-robot.svg" className={classNames('b3-robot')} style={style}/>}
+              {style => <img src='/resources/images/b3-robot.svg' className={classNames('b3-robot')} style={style} />}
             </ReactMotionLoop>
             <ReactMotionLoop styleFrom={{
               opacity: spring(opacity),
@@ -106,11 +102,15 @@ class Robot extends Component {
                 precision: precisionStrength
               })
             }}>
-              {style => <img src="/resources/images/shadow.svg" className={this.props.levelWon ? classNames('shadow-animation') : classNames('shadow')} style={style}/>}
+              {style => (<img
+                src='/resources/images/shadow.svg'
+                className={this.props.levelWon ? classNames('shadow-animation') : classNames('shadow')}
+                style={style}
+              />)}
             </ReactMotionLoop>
           </div>}
         </Motion>
-        <WinContainer/>
+        <WinContainer />
       </div>
     )
   }

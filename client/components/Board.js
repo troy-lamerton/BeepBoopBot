@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import RobotContainer from '../containers/RobotContainer'
 import classNames from 'classnames'
 
@@ -9,6 +9,7 @@ class Board extends Component {
     this.state = {
       hasMounted: false
     }
+    this.renderRow = this.renderRow.bind(this)
   }
 
   componentDidMount () {
@@ -36,6 +37,7 @@ class Board extends Component {
 
   renderTile (tileType, colIndex, rowIndex) {
     const levelTheme = this.currentLevelTheme
+    // remove oddEvenString and use css even selector instead
     const oddEvenString = ((rowIndex + colIndex) % 2 === 1) ? 'odd' : 'even'
 
     let tileImage

@@ -7,7 +7,10 @@
     "node": "6.2.1"
   },
   "scripts": {
-    "start": "concurrently 'npm run build:watch' 'npm run build-css:watch' 'npm run dev-nm'",
+    "start": "node server/index",
+    "watch": "concurrently 'npm run build:watch' 'npm run build-css:watch' 'npm run dev-nm'",
+    "serve": "budo ./public",
+    "dev": "concurrently 'npm run build:watch' 'npm run build-css:watch' 'npm run dev-nm'",
     "dev-nm": "nodemon server/index",
     "build-css": "node-sass --include-path scss client/scss/main.scss public/resources/styles/style.css",
     "build-css:watch": "nodemon -e scss -x \"npm run build-css\"",

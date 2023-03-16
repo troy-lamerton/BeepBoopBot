@@ -12,7 +12,8 @@
     "build": "cd client && webpack --progress --profile --colors",
     "build:watch": "cd client && webpack --progress --profile --colors --watch",
     "test": "babel-tape-runner client/test/*.js | tap-spec",
-    "prepare-deploy": "npm run build-css && npm run build"
+    "predeploy": "npm run build",
+    "deploy": "cp -r public/* webpage/"
   },
   "author": "olwiba",
   "license": "MIT",

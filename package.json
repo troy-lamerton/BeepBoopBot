@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "A fun way to learn programming concepts, Help BB Bot make his way home.",
   "main": "index.js",
-  "engines": {
-    "node": "6.2.1"
-  },
   "scripts": {
     "start": "node server/index",
     "dev-nm": "nodemon server/index",
@@ -43,7 +40,6 @@
     "colors": "^1.1.2",
     "deep-freeze": "0.0.1",
     "enzyme": "^2.4.1",
-    "node-sass": "^3.8.0",
     "nodemon": "^1.10.0",
     "react-addons-test-utils": "^15.2.1",
     "redux-logger": "^2.6.1",

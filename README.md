@@ -2,9 +2,17 @@
 
 # Beep Boop Bot
 
-Beep Boop Bot is an education game aimed at children to teach the basis of programming and logic. The player is presented with a robot (our friend B3) who must navigate through a course of obstacles to reach the exit. The player queues a series of commands, which are executed to control the movment of B3.
+B3 is a simple robot:
 
-Play it here: [beepboopbot.surge.sh](https://beepboopbot.surge.sh/)
+![](docs/b3-robot.png)
+
+B3 needs your help! Navigate the obstacles and escape the spaceship.
+
+In this educational kids game, you learn the fundamentals of coding.
+
+Queue up a sequence of commands, then watch as the B3 takes action.
+
+Play now: [beepboopbot.surge.sh](https://beepboopbot.surge.sh/)
 
 ## MVP
 

@@ -1,3 +1,5 @@
+![](docs/b3%20demo%20first%20levels.webp)
+
 # Beep Boop Bot
 
 Beep Boop Bot is an education game aimed at children to teach the basis of programming and logic. The player is presented with a robot (our friend B3) who must navigate through a course of obstacles to reach the exit. The player queues a series of commands, which are executed to control the movment of B3.

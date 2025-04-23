@@ -109,25 +109,22 @@ The command pane and nav bar have a number of assocaited components that can dis
 
 ## Design
 Credit to Sean Johnson for his awesome design work!
-### Colour Palette
-![The colour palette](https://s32.postimg.org/5aq42p8hx/colours.png "Colour Palette")
 
-### Intro Design
-![Intro design](https://s32.postimg.org/7hqkqxyed/Layout_B3_Intro.png "Intro Design")
+- Colour Palette
+<!-- ![The colour palette](https://s32.postimg.org/5aq42p8hx/colours.png "Colour Palette") -->
+- Intro Design
+<!-- ![Intro design](https://s32.postimg.org/7hqkqxyed/Layout_B3_Intro.png "Intro Design") -->
+- Desktop Design
+<!-- ![Desktop layout](https://s31.postimg.org/dqi2d0l7f/Layout_B3.png "Desktop Design") -->
+- Mobile Design
+<!-- ![Mobile layout](https://s32.postimg.org/4dzj6o89h/Layout_B3_Mobile.png "Mobile Design") -->
 
-### Desktop Design
-![Desktop layout](https://s31.postimg.org/dqi2d0l7f/Layout_B3.png "Desktop Design")
+### Pages
 
-### Mobile Design
-![Mobile layout](https://s32.postimg.org/4dzj6o89h/Layout_B3_Mobile.png "Mobile Design")
-
-## Wireframes
-
-### About Page
-![The about page wireframe](https://s31.postimg.org/crq66ae1n/About_Page.png "About Page")
-
-### Home Page
-![The home page wireframe](https://s31.postimg.org/dh3g2brdn/Home_Wireframe.png "Home Page")
+- About Page
+<!-- ![The about page wireframe](https://s31.postimg.org/crq66ae1n/About_Page.png "About Page") -->
+- Home Page
+<!-- ![The home page wireframe](https://s31.postimg.org/dh3g2brdn/Home_Wireframe.png "Home Page") -->
 
 ## Team learning objectives
 

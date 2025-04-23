@@ -4,7 +4,7 @@ on:
   # Runs on pushes targeting the default branch and only when
   # changes are made to files within the ./webpage folder
   push:
-    branches: ["master"]
+    branches: ["main"]
     paths:
       - './webpage/**'
   # Allows you to run this workflow manually from the Actions tab

@@ -8,7 +8,8 @@ surge.sh hosting is unreliable - currently seeing 503 responses
     - [x] cloudflare pages
     - github pages
 
-- [ ] Synthetic monitor
+## Monitoring
 
-- to ensure the site is up
-- to ensure the site is cached in an AU/NZ region
+To ensure the site is up, and cached in an AU/NZ region
+
+- [ ] Automated: load page, check an Element (rendered by react) is shown

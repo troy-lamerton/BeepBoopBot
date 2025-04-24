@@ -2,6 +2,9 @@
   "name": "BeepBoopBot",
   "version": "1.0.0",
   "description": "A fun way to learn programming concepts, Help B3 get home",
+  "engines": {
+    "node": ">= 22"
+  },
   "scripts": {
     "start": "node server/index",
     "dev-nm": "nodemon server/index",
@@ -10,10 +13,10 @@
     "watch-css": "nodemon -e scss -x \"npm run build-css\"",
     "build": "cd client && webpack --progress --profile --colors",
     "build:watch": "cd client && webpack --progress --profile --colors --watch",
+    "postbuild": "cp -r public/* webpage/",
     "lint": "npx standard ./client",
     "lint:fix": "npx standard --fix ./client",
-    "test": "babel-tape-runner client/test/*.js | tap-spec",
-    "predeploy": "npm run build && cp -r public/* webpage/"
+    "test": "babel-tape-runner client/test/*.js | tap-spec"
   },
   "license": "MIT",
   "dependencies": {

@@ -12,8 +12,7 @@
     "build": "cd client && webpack --progress --profile --colors",
     "build:watch": "cd client && webpack --progress --profile --colors --watch",
     "test": "babel-tape-runner client/test/*.js | tap-spec",
-    "predeploy": "npm run build && cp -r public/* webpage/",
-    "deploy": "surge webpage/ beepboopbot.surge.sh"
+    "predeploy": "npm run build && cp -r public/* webpage/"
   },
   "author": "olwiba",
   "license": "MIT",

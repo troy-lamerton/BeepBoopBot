@@ -12,7 +12,7 @@ In this educational kids game, you learn the fundamentals of coding.
 
 Queue up a sequence of commands, then watch as the robot takes action.
 
-Play now: [beepboopbot.surge.sh](https://beepboopbot.surge.sh/)
+Play now: [beepboopbot.pages.dev](https://beepboopbot.pages.dev/)
 
 ## MVP
 

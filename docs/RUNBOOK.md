@@ -45,8 +45,11 @@ TODO: ensure GitHub Actions will take care of the rest by building the client/ f
 
 ## Monitoring
 
-There is a regular check that ensures the site is showing a real webpage.
+There is a regular check that ensures the site is showing an element rendered by react.
 
-Ask if you need access:
+It also ensures the static files are cached in an AU/NZ region.
 
 https://oceania.grafana.net/a/grafana-synthetic-monitoring-app/checks
+
+(ask if you need access)
+

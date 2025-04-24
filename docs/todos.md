@@ -8,12 +8,6 @@ surge.sh hosting is unreliable - currently seeing 503 responses
     - [x] cloudflare pages
     - github pages
 
-## Monitoring
-
-To ensure the site is up, and cached in an AU/NZ region
-
-- [ ] Automated: load page, check an Element (rendered by react) is shown
-
 ## Browser support
 
 - [ ] show the alert warning later (after first react full render or just setTimeout 3 seconds)

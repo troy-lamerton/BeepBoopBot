@@ -4,11 +4,33 @@ Essential info about the app
 
 ## Developing
 
-Lint before pushing:
+Install dependencies:
+
+```sh
+npm install --legacy-peer-deps
+```
+
+(this project was created before peer dependencies were enforced)
+
+### Building
+
+```sh
+# Build client and output to ./webpage/
+npm run build
+```
+
+### Quality checks
+
+Run these before pushing to main
 
 ```sh
 npm run lint:fix
 ```
+
+```sh
+npm run test
+```
+
 
 ## Deploying
 
@@ -16,11 +38,10 @@ Static files are hosted on cloudflare pages
 
 **To deploy:**
 
-- Push a commit to the main branch to deploy
-- Or merge a pull request into main to deploy
+- Push a commit to the main branch
+- Or merge a pull request into the main branch
 
-### Before deploying
-
+TODO: ensure GitHub Actions will take care of the rest by building the client/ folder if it changed.
 
 ## Monitoring
 

@@ -1,8 +1,7 @@
 {
   "name": "BeepBoopBot",
   "version": "1.0.0",
-  "description": "A fun way to learn programming concepts, Help BB Bot make his way home.",
-  "main": "index.js",
+  "description": "A fun way to learn programming concepts, Help B3 get home",
   "scripts": {
     "start": "node server/index",
     "dev-nm": "nodemon server/index",
@@ -14,7 +13,6 @@
     "test": "babel-tape-runner client/test/*.js | tap-spec",
     "predeploy": "npm run build && cp -r public/* webpage/"
   },
-  "author": "olwiba",
   "license": "MIT",
   "dependencies": {
     "classnames": "^2.2.5",

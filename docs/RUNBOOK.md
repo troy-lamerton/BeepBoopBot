@@ -2,6 +2,14 @@
 
 Essential info about the app
 
+## Developing
+
+Lint before pushing:
+
+```sh
+npm run lint:fix
+```
+
 ## Deploying
 
 Static files are hosted on cloudflare pages

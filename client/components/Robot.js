@@ -4,11 +4,12 @@ import WinContainer from '../containers/WinContainer'
 import classNames from 'classnames'
 import { JUMP_UP, MOVE_FORWARD, SOUND, TOGGLE_SOUND, TURN_LEFT, TURN_RIGHT } from '../reducers/action'
 
+const defaultScale = 85;
 class Robot extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      scale: 90,
+      scale: defaultScale,
     }
   }
 
@@ -31,7 +32,7 @@ class Robot extends Component {
 
   /** Set scale based on robot props */
   componentDidUpdate (_prevProps) {
-    const defaultScale = 90;
+    const onBoxScale = 115;
     if (!this.props.robot.isAlive) {
       if (this.state.scale !== 10) {
         this.setState({ scale: 10 })
@@ -41,8 +42,8 @@ class Robot extends Component {
     const commandExecuted = this.props.commandQueue[this.props.executeCommandIndex - 1]
     switch (commandExecuted) {
       case JUMP_UP:
-        if (this.state.scale !== 110) {
-          this.setState({ scale: 110 })
+        if (this.state.scale !== onBoxScale) {
+          this.setState({ scale: onBoxScale })
         }
         break;
       case MOVE_FORWARD:

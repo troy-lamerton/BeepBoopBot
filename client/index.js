@@ -31,7 +31,7 @@ const isChromium = window.chrome,
   vendorName = winNav.vendor,
   isOpera = winNav.userAgent.indexOf("OPR") > -1,
   isIEedge = winNav.userAgent.indexOf("Edge") > -1,
-  isIOSChrome = winNav.userAgent.match("CriOS");
+  isIOSChrome = winNav.userAgent.match("CriOS")
 
 if (isIOSChrome) {
   // is Google Chrome on IOS

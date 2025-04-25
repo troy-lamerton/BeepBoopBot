@@ -1,3 +1,5 @@
+@use './colors';
+
 .win-notice {
   text-align: center;
 
@@ -47,8 +49,8 @@
     }
 
     .win-action {
-      background: $green;
-      border-bottom: 6px solid $green-dark;
+      background: colors.$green;
+      border-bottom: 6px solid colors.$green-dark;
     }
 
     .win-action:hover {

@@ -1,14 +1,16 @@
+@use './colors';
+
 .navigation {
   width: 100%;
   height: 12.3%;
-  background: $blue-darkest;
+  background: colors.$blue-darkest;
   display:flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
   align-content: center;
   align-items: center;
-  border-bottom: 7px solid $blue-shadow;
+  border-bottom: 7px solid colors.$blue-shadow;
   min-height: 70px;
 
   @media screen and (max-width: 600px) {
@@ -39,10 +41,10 @@
       height: 120%;
       width: 90%;
       padding: 2%;
-      background: $blue-darkest;
+      background: colors.$blue-darkest;
       overflow: visible;
       border-radius: 40px;
-      border-bottom: 7px solid $blue-shadow;
+      border-bottom: 7px solid colors.$blue-shadow;
       text-align: center;
 
       @media screen and (max-width: 600px) {
@@ -86,11 +88,11 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      border: 2px solid $blue;
-      background: $blue-darkest;
+      border: 2px solid colors.$blue;
+      background: colors.$blue-darkest;
       font-family: 'Press Start 2P', cursive;
       font-size: 20px;
-      color: $blue;
+      color: colors.$blue;
       cursor: help;
 
       @media screen and (max-width: 450px) {
@@ -99,8 +101,8 @@
     }
 
     .about:hover {
-      color: $blue-light;
-      border: 2px solid $blue-light;
+      color: colors.$blue-light;
+      border: 2px solid colors.$blue-light;
     }
 
     .sound {
@@ -110,11 +112,11 @@
       justify-content: center;
       align-items: center;
       border-radius: 0 10px 10px 0;
-      border: 2px solid $blue;
-      background: $blue-darkest;
+      border: 2px solid colors.$blue;
+      background: colors.$blue-darkest;
       font-family: 'Press Start 2P', cursive;
       font-size: 20px;
-      color: $blue;
+      color: colors.$blue;
       cursor: pointer;
 
       .sound-img {
@@ -131,8 +133,8 @@
     }
 
     .sound:hover {
-      color: $blue-light;
-      border: 2px solid $blue-light;
+      color: colors.$blue-light;
+      border: 2px solid colors.$blue-light;
     }
 
     .level-select-container {
@@ -151,7 +153,7 @@
 
     .skylight-dialog::-webkit-scrollbar-thumb {
       border-radius: 10px;
-      background-color: $blue-darkest;
+      background-color: colors.$blue-darkest;
 
     }
 
@@ -177,10 +179,10 @@
       height: 10%;
       width:  100%;
       border-radius: 10px;
-      border: 2px solid $blue;
-      background: $blue-darkest;
+      border: 2px solid colors.$blue;
+      background: colors.$blue-darkest;
       font-size: 20px;
-      color: $blue;
+      color: colors.$blue;
       cursor: pointer;
       margin-top: 10px;
 
@@ -193,8 +195,8 @@
     }
 
     .level-select:hover {
-      color: $blue-light;
-      border: 2px solid $blue-light;
+      color: colors.$blue-light;
+      border: 2px solid colors.$blue-light;
     }
 
     .modal-button-container {
@@ -235,8 +237,8 @@
       }
 
       .how-to-action {
-        background: $green;
-        border-bottom: 12px solid $green-dark;
+        background: colors.$green;
+        border-bottom: 12px solid colors.$green-dark;
       }
 
       .how-to-action:hover {
@@ -281,11 +283,11 @@
     height: 92%;
     width: 250px;
     border-radius: 10px 0 0 10px;
-    border: 2px solid $blue;
-    background: $blue-darkest;
+    border: 2px solid colors.$blue;
+    background: colors.$blue-darkest;
     font-family: 'Press Start 2P', cursive;
     font-size: 14px;
-    color: $blue;
+    color: colors.$blue;
     padding-left: 40px;
     cursor: pointer;
 
@@ -299,8 +301,8 @@
   }
 
   .levels:hover {
-    color: $blue-light;
-    border: 2px solid $blue-light;
+    color: colors.$blue-light;
+    border: 2px solid colors.$blue-light;
     @media screen and (max-width: 450px) {
       color: transparent;
     }
@@ -309,8 +311,8 @@
   }
 
   .level-option{
-    background: $blue-darkest;
-    color: $blue;
+    background: colors.$blue-darkest;
+    color: colors.$blue;
   }
 
   select {

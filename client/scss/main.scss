@@ -1,36 +1,14 @@
-/* Colors */
-$white: #f2f2f2;
-$white-dark: #cbcbcb;
-
-$red: #d53126;
-$red-dark: #a93126;
-
-$green: #78c042;
-$green-dark: #4d9713;
-
-$blue: #1c8da0;
-$blue-light: #60afbc;
-$blue-dark: #1c8da0;
-$blue-darker: #006073;
-$blue-darkest: #02333a;
-$blue-shadow: #011e22;
-
-$yellow: #e8d700;
-$yellow-dark: #c4b505;
-
-$orange: #ea7750;
-$orange-dark: #c45d45;
-
 /* Import Assets */
-@import './nav.scss';
-@import './commandPane.scss';
-@import './board.scss';
-@import './commandQueue.scss';
-@import './runButton.scss';
-@import './robot.scss';
-@import './win.scss';
+@use './colors.scss';
+@use './nav.scss';
+@use './commandPane.scss';
+@use './board.scss';
+@use './commandQueue.scss';
+@use './runButton.scss';
+@use './robot.scss';
+@use './win.scss';
 
-/* Import Fonts */
+/* Fonts */
 @import 'https://fonts.googleapis.com/css?family=Press+Start+2P';
 @import 'https://fonts.googleapis.com/css?family=Space+Mono';
 
@@ -40,7 +18,7 @@ $heading: 'Press Start 2P', cursive;
 $text: 'Space Mono', monospace;
 
 body {
-	background: $blue;
+	background: colors.$blue;
 	overflow-y: hidden;
 }
 
@@ -51,7 +29,7 @@ h1 {
 h3{
 	font-family: $heading;
 	font-size: 2.5vh;
-	color: $white;
+	color: colors.$white;
 
 	@media screen and (max-width: 850px) {
 		font-size: 2vh;
@@ -61,7 +39,7 @@ h3{
 h4{
 	font-family: $heading;
 	font-size: 16px;
-	color: $white-dark;
+	color: colors.$white-dark;
 	cursor: default;
 }
 

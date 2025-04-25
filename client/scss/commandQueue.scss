@@ -1,3 +1,5 @@
+@use './colors';
+
 .command-container {
   height: 30%;
   width: 80%;
@@ -7,9 +9,9 @@
   justify-content: center;
   align-content: center;
   align-items: center;
-  border-left: 7px solid $blue-darkest;
-  border-top: 7px solid $blue-darkest;
-  background: $blue-darker;
+  border-left: 7px solid colors.$blue-darkest;
+  border-top: 7px solid colors.$blue-darkest;
+  background: colors.$blue-darker;
   border-radius: 10px;
   overflow-y: hidden !important;
 
@@ -30,9 +32,9 @@
 }
 
 .commandQueueIcon-removable:hover {
-  background-color: $orange-dark;
+  background-color: colors.$orange-dark;
 }
 
 .commandQueueIcon-active {
-  background-color: $blue;
+  background-color: colors.$blue;
 }

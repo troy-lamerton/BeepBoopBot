@@ -1,3 +1,5 @@
+@use './colors';
+
 $actionButtonElevation: 7px;
 
 .command-pane {
@@ -11,7 +13,7 @@ $actionButtonElevation: 7px;
   justify-content: flex-start;
   align-content: center;
   align-items: center;
-  background: $blue;
+  background: colors.$blue;
 
   @media screen and (max-width: 850px) {
     width: 100%;
@@ -42,7 +44,7 @@ $actionButtonElevation: 7px;
 
   .command-queue::-webkit-scrollbar-thumb {
       border-radius: 10px;
-      background-color: $blue-darkest;
+      background-color: colors.$blue-darkest;
   }
   .moves-left {
       line-height: 100%;
@@ -62,9 +64,9 @@ $actionButtonElevation: 7px;
       justify-content: flex-start;
       align-content: flex-start;
       align-items: flex-start;
-      border-left: 7px solid $blue-darkest;
-      border-top: 7px solid $blue-darkest;
-      background: $blue-darker;
+      border-left: 7px solid colors.$blue-darkest;
+      border-top: 7px solid colors.$blue-darkest;
+      background: colors.$blue-darker;
       border-radius: 10px;
       overflow-y: scroll;
 
@@ -142,7 +144,7 @@ $actionButtonElevation: 7px;
       justify-content: center;
       align-content: center;
       align-items: center;
-      background: $white-dark;
+      background: colors.$white-dark;
       border-bottom: $actionButtonElevation solid #a4a4a4;
 
       @media screen and (max-width: 1400px) {
@@ -174,13 +176,13 @@ $actionButtonElevation: 7px;
     }
 
     .action-forward {
-      background: $green;
-      border-bottom: $actionButtonElevation solid $green-dark;
+      background: colors.$green;
+      border-bottom: $actionButtonElevation solid colors.$green-dark;
     }
 
     .action-rotate {
-      background: $orange;
-      border-bottom: $actionButtonElevation solid $orange-dark;
+      background: colors.$orange;
+      border-bottom: $actionButtonElevation solid colors.$orange-dark;
     }
     .moves-left {
         line-height: 100%;
@@ -199,8 +201,8 @@ $actionButtonElevation: 7px;
     }
 
     .action-jump {
-      background: $yellow;
-      border-bottom: $actionButtonElevation solid $yellow-dark;
+      background: colors.$yellow;
+      border-bottom: $actionButtonElevation solid colors.$yellow-dark;
     }
 
     .action-jump:hover {

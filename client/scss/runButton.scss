@@ -1,3 +1,5 @@
+@use './colors';
+
 .run-button-container {
   height: 40%;
   width: 80%;
@@ -43,8 +45,8 @@
   }
 
   .go-action {
-    background: $green;
-    border-bottom: 9px solid $green-dark;
+    background: colors.$green;
+    border-bottom: 9px solid colors.$green-dark;
   }
 
   .go-action:hover {
@@ -53,8 +55,8 @@
   }
 
   .stop-action {
-    background: $red;
-    border-bottom: 12px solid $red-dark;
+    background: colors.$red;
+    border-bottom: 12px solid colors.$red-dark;
   }
 
   .stop-action:hover {
@@ -63,8 +65,8 @@
   }
 
   .retry-action {
-    background: $orange;
-    border-bottom: 12px solid $orange-dark;
+    background: colors.$orange;
+    border-bottom: 12px solid colors.$orange-dark;
   }
 
   .retry-action:hover {
@@ -73,8 +75,8 @@
   }
 
   .bin-action {
-    background: $yellow;
-    border-bottom: 12px solid $yellow-dark;
+    background: colors.$yellow;
+    border-bottom: 12px solid colors.$yellow-dark;
   }
 
   .bin-action:hover {

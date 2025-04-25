@@ -31,6 +31,10 @@ Play now: [beepboopbot.pages.dev](https://beepboopbot.pages.dev/)
 - [x] Mobile First
 - [x] Can only edit commands when not running
 
+## Developing
+
+See [RUNBOOK.md](docs/RUNBOOK.md) for instructions on how to run or deploy the app.
+
 ## React Components
 
 * App

@@ -41,7 +41,7 @@ Static files are hosted on cloudflare pages
 - Push a commit to the main branch
 - Or merge a pull request into the main branch
 
-TODO: ensure GitHub Actions will take care of the rest by building the client/ folder if it changed.
+The [GitHub workflow](../.github/workflows/deploy.cloudflare.yml) will automatically build the static files and deploy them.
 
 ## Monitoring
 

@@ -29,13 +29,13 @@ const INITIAL_STATE = {
 
 export function cloneState (state) {
   return {
-    robot: {...state.robot},
+    robot: { ...state.robot },
     board: state.board.map(row => row.slice()),
     moveLimit: state.moveLimit,
     commandQueue: [...state.commandQueue],
     running: state.running,
     executeCommandIndex: state.executeCommandIndex,
-    tileInfo: {...state.tileInfo},
+    tileInfo: { ...state.tileInfo },
     currentLevel: state.currentLevel,
     levelWon: state.levelWon,
     hasFinished: state.hasFinished,
@@ -126,11 +126,10 @@ const reducer = (state = INITIAL_STATE, action) => {
     case a.TOGGLE_SOUND:
       newState.sound = !(newState.sound)
       var cookies = cookie.load('sound')
-      if (cookies === 'ON'){
-        cookie.save('sound', 'OFF')       
-      }
-      else{
-        cookie.save('sound', 'ON') 
+      if (cookies === 'ON') {
+        cookie.save('sound', 'OFF')
+      } else {
+        cookie.save('sound', 'ON')
       }
       return newState
 
@@ -139,7 +138,6 @@ const reducer = (state = INITIAL_STATE, action) => {
 
     default:
       return state
-
   }
 }
 

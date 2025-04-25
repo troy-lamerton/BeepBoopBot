@@ -6,7 +6,6 @@ import BoardContainer from '../containers/BoardContainer'
 import BackgroundtrackContainer from '../containers/BackgroundtrackContainer'
 
 class App extends Component {
-
   render () {
     return (
       <div className='app'>

@@ -17,11 +17,11 @@ test('cloneState clones the state without mutations', (t) => {
 })
 
 test('CLEAR_BUTTON action clears the queue', (t) => {
-  const initialState = reducer(undefined, {type: actions.QUEUE_ACTION, payload: 'an action'})
+  const initialState = reducer(undefined, { type: actions.QUEUE_ACTION, payload: 'an action' })
   freeze(initialState)
   t.equal(initialState.commandQueue.length, 1, 'Command queue contains one action')
 
-  const newState = reducer(initialState, {type: actions.CLEAR_BUTTON})
+  const newState = reducer(initialState, { type: actions.CLEAR_BUTTON })
 
   t.equal(newState.commandQueue.length, 0, 'Command queue contains 0 actions after clearing')
   t.end()
@@ -32,7 +32,7 @@ test('GO_BUTTON action sets state running to true', function (t) {
   freeze(initialState)
   t.false(initialState.running)
 
-  const newState = reducer(initialState, {type: actions.GO_BUTTON})
+  const newState = reducer(initialState, { type: actions.GO_BUTTON })
 
   t.true(newState.running)
   t.end()
@@ -50,7 +50,7 @@ test('TURN_LEFT action turns B3 to left', function (t) {
   freeze(initialState)
   t.equal(initialState.commandQueue.length, 0, 'initial queue length is zero')
 
-  const newState = reducer(initialState, {type: actions.TURN_LEFT})
+  const newState = reducer(initialState, { type: actions.TURN_LEFT })
 
   t.equal(newState.robot.direction, -90, 'B3 turned left')
   t.end()
@@ -61,7 +61,7 @@ test('TURN_RIGHT action turns B3 to right', function (t) {
   freeze(initialState)
   t.equal(initialState.commandQueue.length, 0, 'initial queue length is zero')
 
-  const newState = reducer(initialState, {type: actions.TURN_RIGHT})
+  const newState = reducer(initialState, { type: actions.TURN_RIGHT })
 
   t.equal(newState.robot.direction, 90, 'B3 turned right')
   t.end()
@@ -73,7 +73,7 @@ test('MOVE_FORWARD action moves B3 forward (negative in y direction)', function 
   t.equal(initialState.commandQueue.length, 0, 'initial queue length is zero')
   t.equal(initialState.robot.positionY, 4, 'initial y position is 4')
 
-  const newState = reducer(initialState, {type: actions.MOVE_FORWARD})
+  const newState = reducer(initialState, { type: actions.MOVE_FORWARD })
 
   t.equal(newState.robot.positionY, 3, 'B3 moved forward to y = 3')
   t.end()
@@ -82,7 +82,7 @@ test('MOVE_FORWARD action moves B3 forward (negative in y direction)', function 
 test('SELECT_LEVEL updates the state', function (t) {
   const initialState = reducer(undefined, {})
   freeze(initialState)
-  const beforeLevelChange = reducer(initialState, {type: actions.MOVE_FORWARD})
+  const beforeLevelChange = reducer(initialState, { type: actions.MOVE_FORWARD })
   freeze(beforeLevelChange)
 
   const newLevelNum = 4

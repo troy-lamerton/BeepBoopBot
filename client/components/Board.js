@@ -1,24 +1,23 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import RobotContainer from '../containers/RobotContainer'
 import classNames from 'classnames'
 
 class Board extends Component {
-
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.state = {
       hasMounted: false
     }
   }
 
-  componentDidMount() {
+  componentDidMount () {
     this.props.addTileInfo(this.refs)
-    this.setState({hasMounted: true})
+    this.setState({ hasMounted: true })
   }
 
-  render() {
-    var levelTheme = ''
-    var currentLevel = this.props.currentLevel
+  render () {
+    let levelTheme = ''
+    const currentLevel = this.props.currentLevel
     if (currentLevel < 6) {
       levelTheme = 'basement'
     } else if (currentLevel < 11) {
@@ -41,25 +40,24 @@ class Board extends Component {
                 : 'even'
               return (col === 3
                 ? <div key={rowIndex + colIndex} className={classNames('tile', 'clear')} ref={rowIndex.toString() + colIndex.toString()}>
-                    <img src='/resources/images/blackhole.svg' className='hole'></img>
+                  <img src='/resources/images/blackhole.svg' className='hole' />
                   </div>
                 : col === 2
                   ? <div key={rowIndex + colIndex} className={classNames('tile', levelTheme, oddEven)} ref={rowIndex.toString() + colIndex.toString()}>
-                      <img src='/resources/images/box-tile.svg' className='box-tile'/>
+                    <img src='/resources/images/box-tile.svg' className='box-tile' />
                     </div>
                   : col === 1
                     ? <div key={rowIndex + colIndex} className={classNames('tile', levelTheme, oddEven)} ref={rowIndex.toString() + colIndex.toString()}>
-                        <div className='elevator-bottom'>
-                          <img src='/resources/images/elevator-top.svg' className={ this.props.levelWon ? classNames('elevator-animation') : classNames('elevator-no-animation') }/>
-                        </div>
+                      <div className='elevator-bottom'>
+                        <img src='/resources/images/elevator-top.svg' className={this.props.levelWon ? classNames('elevator-animation') : classNames('elevator-no-animation')} />
                       </div>
-                    : <div key={rowIndex + colIndex} className={classNames('tile', levelTheme, oddEven)} ref={rowIndex.toString() + colIndex.toString()}></div>)
+                      </div>
+                    : <div key={rowIndex + colIndex} className={classNames('tile', levelTheme, oddEven)} ref={rowIndex.toString() + colIndex.toString()} />)
             })
-          })
-        }
+          })}
         </div>
         {this.state.hasMounted
-          ? <RobotContainer/>
+          ? <RobotContainer />
           : null}
       </div>
     )

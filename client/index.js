@@ -28,8 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const isChromium = Boolean(window.chrome)
 const userAgent = window.navigator.userAgent
-const isIOSChrome = userAgent.includes("CriOS")
-const isFirefox = userAgent.includes("Firefox/")
+const isIOSChrome = userAgent.includes('CriOS')
+const isFirefox = userAgent.includes('Firefox/')
 
 if (isIOSChrome) {
   // is Google Chrome on IOS
@@ -37,12 +37,12 @@ if (isIOSChrome) {
 } else if (isChromium) {
   // Chrome works so assume all chromium supported
   console.log('Chromium detected')
-} else if (isFirefox){
+} else if (isFirefox) {
   // tested it works
   console.log('Firefox detected')
 } else {
   // support not known, warn the user
   setTimeout(() => {
     window.alert('This game has not been tested on your browser. The game may be squashed or look strange.')
-  }, 0);
+  }, 0)
 }

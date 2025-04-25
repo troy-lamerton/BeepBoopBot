@@ -3,9 +3,8 @@ import * as a from '../reducers/action'
 import classNames from 'classnames'
 
 class CommandQueue extends Component {
-
   render () {
-    let commandImgs = {}
+    const commandImgs = {}
     commandImgs[a.MOVE_FORWARD] = '/resources/images/move-forward.svg'
     commandImgs[a.JUMP_UP] = '/resources/images/jump.svg'
     commandImgs[a.TURN_LEFT] = '/resources/images/turn-left.svg'
@@ -27,13 +26,11 @@ class CommandQueue extends Component {
             >
               <img src={commandImgs[e]} />
             </div>
-        )
-        })
-        }
+          )
+        })}
       </div>
     )
   }
-
 }
 
 export default CommandQueue

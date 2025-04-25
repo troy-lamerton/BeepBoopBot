@@ -1,5 +1,5 @@
 export default function (robot, board) {
-  const clonedRobot = {...robot}
+  const clonedRobot = { ...robot }
   switch (Math.abs(robot.direction % 360)) {
     case 0:
       // 0 is backwards along Y axis

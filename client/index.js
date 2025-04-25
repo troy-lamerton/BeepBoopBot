@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
-import { createStore, applyMiddleware, combineReducers } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
 import createLogger from 'redux-logger'
 import soundsMiddleware from 'redux-sounds'
@@ -26,18 +26,23 @@ document.addEventListener('DOMContentLoaded', () => {
   )
 })
 
-const isChromium = window.chrome,
-  winNav = window.navigator,
-  vendorName = winNav.vendor,
-  isOpera = winNav.userAgent.indexOf("OPR") > -1,
-  isIEedge = winNav.userAgent.indexOf("Edge") > -1,
-  isIOSChrome = winNav.userAgent.match("CriOS")
+const isChromium = Boolean(window.chrome)
+const userAgent = window.navigator.userAgent
+const isIOSChrome = userAgent.includes("CriOS")
+const isFirefox = userAgent.includes("Firefox/")
 
 if (isIOSChrome) {
   // is Google Chrome on IOS
-} else if (isChromium !== null && isChromium !== undefined && vendorName === 'Google Inc.' && isOpera === false && isIEedge === false) {
-  // is Google Chrome
+  console.log('iOS chromium detected')
+} else if (isChromium) {
+  // Chrome works so assume all chromium supported
+  console.log('Chromium detected')
+} else if (isFirefox){
+  // tested it works
+  console.log('Firefox detected')
 } else {
-  // not Google Chrome
-  window.alert('This game is in alpha stage and only supports Google Chrome. The game may be squashed or look strange.')
+  // support not known, warn the user
+  setTimeout(() => {
+    window.alert('This game has not been tested on your browser. The game may be squashed or look strange.')
+  }, 0);
 }

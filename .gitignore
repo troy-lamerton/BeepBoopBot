@@ -12,3 +12,6 @@ npm-debug.log
 
 # Build output
 webpage/
+
+# MacOS
+.DS_Store

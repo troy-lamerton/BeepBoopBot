@@ -87,7 +87,7 @@ class Robot extends Component {
           }}
           children={value => <div>
             <div
-              className={classNames('robot-container', this.props.levelWon ? 'b3-container-animation' : '')}
+              className={classNames('robot-container', { 'b3-container-animation': this.props.levelWon })}
               style={{
                 height: value.scale,
                 width: value.scale,
@@ -95,10 +95,10 @@ class Robot extends Component {
                 left: value.x,
                 transform: `translate(-50%, -50%)`,
               }}>
-              <img src="/resources/images/shadow.svg" className={classNames('shadow', { 'shadow-animation': this.props.levelWon })} />
+              <img src="/resources/images/shadow.svg" className={classNames('b3-shadow', { 'b3-shadow-animation': this.props.levelWon })} />
             </div>
             <div
-              className={classNames('robot-container', this.props.levelWon ? 'b3-container-animation' : '')}
+              className={classNames('robot-container', 'up-down-animation', { 'b3-container-animation': this.props.levelWon })}
               style={{
                 height: value.scale,
                 width: value.scale,

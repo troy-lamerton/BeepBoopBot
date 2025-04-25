@@ -322,3 +322,7 @@
   }
 }
 
+/* Level picker dialog must be above robot */
+.skylight-wrapper {
+  z-index: 200;
+}

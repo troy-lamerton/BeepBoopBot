@@ -28,10 +28,10 @@ module.exports = {
   plugins: process.env.NODE_ENV === 'development'
     ? []
     : [
-      new webpack.optimize.UglifyJsPlugin({
-        compress: {
-          warnings: false
-        }
-      })
-    ],
+        new webpack.optimize.UglifyJsPlugin({
+          compress: {
+            warnings: false
+          }
+        })
+      ]
 }

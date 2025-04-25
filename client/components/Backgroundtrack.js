@@ -29,11 +29,11 @@ export default class Backgroundtrack extends Component {
   }
 
   componentDidMount () {
-    let cookies = cookie.load('sound')
-    if (cookies === undefined) {
+    const soundCookie = cookie.load('sound')
+    if (soundCookie === undefined) {
       cookie.save('sound', 'OFF')
     }
-    if (cookies === 'ON') {
+    if (soundCookie === 'ON') {
       this.setState({ playStatus: Sound.status.PLAYING })
       return
     }
@@ -77,8 +77,8 @@ export default class Backgroundtrack extends Component {
         playStatus={this.state.playStatus}
         playFromPosition={this.state.position}
         volume={25}
-        loop={true}
         onFinishedPlaying={() => this.setState({ playStatus: Sound.status.PLAYING })}
+        loop
       />
     )
   }

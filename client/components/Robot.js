@@ -4,12 +4,12 @@ import WinContainer from '../containers/WinContainer'
 import classNames from 'classnames'
 import { JUMP_UP, MOVE_FORWARD, SOUND, TOGGLE_SOUND, TURN_LEFT, TURN_RIGHT } from '../reducers/action'
 
-const defaultScale = 85;
+const defaultScale = 85
 class Robot extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      scale: defaultScale,
+      scale: defaultScale
     }
   }
 
@@ -32,12 +32,12 @@ class Robot extends Component {
 
   /** Set scale based on robot props */
   componentDidUpdate (_prevProps) {
-    const onBoxScale = 115;
+    const onBoxScale = 115
     if (!this.props.robot.isAlive) {
       if (this.state.scale !== 10) {
         this.setState({ scale: 10 })
       }
-      return;
+      return
     }
     const commandExecuted = this.props.commandQueue[this.props.executeCommandIndex - 1]
     switch (commandExecuted) {
@@ -45,19 +45,19 @@ class Robot extends Component {
         if (this.state.scale !== onBoxScale) {
           this.setState({ scale: onBoxScale })
         }
-        break;
+        break
       case MOVE_FORWARD:
         if (this.state.scale !== defaultScale) {
-          this.setState({ scale: defaultScale})
+          this.setState({ scale: defaultScale })
         }
-        break;
+        break
       case TURN_LEFT, TURN_RIGHT, TOGGLE_SOUND, SOUND:
         // do nothing
-        break;
+        break
       default: {
         // when you retry etc, reset robot scale
         if (this.state.scale !== defaultScale) {
-          this.setState({ scale: defaultScale})
+          this.setState({ scale: defaultScale })
         }
       }
     }
@@ -94,20 +94,22 @@ class Robot extends Component {
                 width: value.scale,
                 top: value.y - 12,
                 left: value.x,
-                transform: `translate(-50%, -50%)`,
-              }}>
-              <img src="/resources/images/shadow.svg" className={classNames('b3-shadow', { 'b3-shadow-animation': this.props.levelWon })} />
+                transform: 'translate(-50%, -50%)'
+              }}
+            >
+              <img src='/resources/images/shadow.svg' className={classNames('b3-shadow', { 'b3-shadow-animation': this.props.levelWon })} />
             </div>
             <div
               className={classNames('robot-container', 'up-down-animation', { 'b3-container-animation': this.props.levelWon })}
               style={{
                 height: value.scale,
                 width: value.scale,
-                top: value.y - 12 - value.scale/2,
-                left: value.x - value.scale/2,
-                rotate: `${value.rot}deg`,
-              }}>
-              <img src="/resources/images/b3-robot.svg" className="b3-robot" style={{opacity}} />
+                top: value.y - 12 - value.scale / 2,
+                left: value.x - value.scale / 2,
+                rotate: `${value.rot}deg`
+              }}
+            >
+              <img src='/resources/images/b3-robot.svg' className='b3-robot' style={{ opacity }} />
             </div>
           </div>}
         />

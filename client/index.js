@@ -44,5 +44,5 @@ if (isIOSChrome) {
   // support not known, warn the user
   setTimeout(() => {
     window.alert('This game has not been tested on your browser. The game may be squashed or look strange.')
-  }, 0)
+  }, 400)
 }

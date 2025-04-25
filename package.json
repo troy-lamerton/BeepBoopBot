@@ -8,7 +8,7 @@
   "scripts": {
     "start": "node server/index",
     "dev-nm": "nodemon server/index",
-    "dev-wp": "cd client && webpack-dev-server --hot --inline",
+    "dev-wp": "cd client && NODE_ENV=development webpack-dev-server --hot --inline",
     "build": "npm run build:js && npm run build:styles",
     "build:styles": "sass --load-path scss client/scss/main.scss public/resources/styles/style.css",
     "watch:styles": "nodemon -e scss -x \"npm run build:styles\"",

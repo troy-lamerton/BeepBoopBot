@@ -25,11 +25,13 @@ module.exports = {
   devServer: {
     contentBase: '../public'
   },
-  plugins: [
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false
-      }
-    })
-  ]
+  plugins: process.env.NODE_ENV === 'development'
+    ? []
+    : [
+      new webpack.optimize.UglifyJsPlugin({
+        compress: {
+          warnings: false
+        }
+      })
+    ],
 }

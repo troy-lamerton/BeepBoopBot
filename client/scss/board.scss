@@ -222,8 +222,6 @@
 	}
 
 
-
-
 	.elevator-bottom {
 		background: url('/resources/images/elevator-below.svg') no-repeat;
 		background-size: 75%;
@@ -232,5 +230,9 @@
 		display: flex;
 		justify-content: center;
 		align-content: center;
+		/* Firefox: width and height must be set */
+		width: 100%;
+		height: 100%;
+		margin: min(1.8vw, 12%);
 	}
 }

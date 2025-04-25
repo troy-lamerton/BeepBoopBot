@@ -13,7 +13,7 @@
     "watch-css": "nodemon -e scss -x \"npm run build-css\"",
     "build": "cd client && webpack --progress --profile --colors",
     "build:watch": "cd client && webpack --progress --profile --colors --watch",
-    "postbuild": "cp -r public/* webpage/",
+    "postbuild": "mkdir -p webpage/ && cp -r public/* webpage/",
     "lint": "npx standard ./client",
     "lint:fix": "npx standard --fix ./client",
     "test": "babel-tape-runner client/test/*.js | tap-spec"
